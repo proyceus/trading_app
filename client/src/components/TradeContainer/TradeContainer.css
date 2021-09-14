@@ -1,0 +1,34 @@
+.buy-button {
+  background-color:green;
+}
+
+.trade-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px solid rgba(128, 128, 128, 0.267);
+  border-radius: 5px;
+  width: 50%;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.trade-button {
+  width: 45%;
+  margin: 10px;
+}
+
+input {
+  margin: 10px !important;
+  width: 45%;
+}
+
+.amounts {
+  width: 45%;
+  color: gray;
+  margin: 10px;
+}
