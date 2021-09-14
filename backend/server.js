@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cors());
 
-// // Import Express routes
-// require('./routes')(app);
+// Import Express routes
+require('./routes')(app);
 
 
 // Start Express Server
