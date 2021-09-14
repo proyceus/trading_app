@@ -1,21 +1,26 @@
+import { useState, useEffect } from 'react';
+
 
 const Assets = () => {
 
-  const onClick = () => {
-    fetch('https://binance.us/api/v3/trades?BTCUSD', {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+  const [assets, setAssets] = useState(null);
+
+  useEffect(() => {
+    fetchAssets();
+  }, [])
+
+  const fetchAssets = async () => {
+    await fetch("https://www.binance.us/api/v3/trades?symbol=BTCUSD")
       .then(response => response.json())
-      .then(data => console.log(data));
+      .then(data => setAssets(data))
   }
 
   return (
     <div>
-      <button onClick={onClick}>Click me</button>
+      <button onClick={fetchAssets}>Click me</button>
+      <ul>
+        {assets && assets.map((item) => <li>Price: {item.price} | Quantity: {item.qty}</li>)}
+      </ul>
     </div>
   )
 }
