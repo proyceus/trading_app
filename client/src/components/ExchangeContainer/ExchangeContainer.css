@@ -1,0 +1,8 @@
+.exchange-accordion {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion {
+  width: 50%;
+}
