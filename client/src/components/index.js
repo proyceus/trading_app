@@ -3,3 +3,4 @@ export { default as TradeContainer } from "./TradeContainer/TradeContainer";
 export { default as ChartContainer } from "./ChartContainer/ChartContainer";
 export { default as Assets } from "./Assets/Assets";
 export { default as AssetDropdown } from "./AssetDropdown/AssetDropdown";
+export { default as ExchangeContainer } from "./ExchangeContainer/ExchangeContainer";
