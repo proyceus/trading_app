@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './ChartContainer.css';
 
 
-const ChartContainer = () => {
+const ChartContainer = ({asset}) => {
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -11,7 +11,7 @@ const ChartContainer = () => {
     script.innerHTML = new window.TradingView.widget({
       "width": 980,
       "height": 610,
-      "symbol": "mngousd",
+      "symbol": asset,
       "interval": "D",
       "timezone": "Etc/UTC",
       "theme": "dark",
@@ -29,7 +29,7 @@ const ChartContainer = () => {
   return (
     <div className="tradingview-widget-container">
       <div id="tradingview_dc545"></div>
-      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noreferrer" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+      <div class="tradingview-widget-copyright">Trading Chart by <a href="www.tradingview.com">TradingView</a></div>
     </div>
 
   )
