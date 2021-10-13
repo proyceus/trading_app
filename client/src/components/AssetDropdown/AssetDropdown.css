@@ -1,0 +1,8 @@
+.filterButton {
+  background-color: #a1a1a1;
+}
+
+.filterActive {
+  background-color: #000000;
+  color:white;
+}
