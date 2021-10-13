@@ -3,24 +3,25 @@ import { useState, useEffect } from 'react';
 
 const Assets = () => {
 
-  const [assets, setAssets] = useState(null);
+  const [binanceAssets, setBinanceAssets] = useState(null);
 
   useEffect(() => {
-    fetchAssets();
+    // fetchAllBinanceAssets();
   }, [])
 
-  const fetchAssets = async () => {
-    await fetch("https://www.binance.us/api/v3/trades?symbol=BTCUSD")
+  const fetchAllBinanceAssets = async () => {
+    await fetch("https://api.binance.com/api/v3/exchangeInfo")
       .then(response => response.json())
-      .then(data => setAssets(data))
+      .then(data => setBinanceAssets(data.symbols));
   }
 
   return (
     <div>
-      <button onClick={fetchAssets}>Click me</button>
-      <ul>
-        {assets && assets.map((item) => <li>Price: {item.price} | Quantity: {item.qty}</li>)}
-      </ul>
+      <h1>Binance Assets</h1>
+      <button onClick={fetchAllBinanceAssets}>Click me for consoel log</button>
+      <select>
+        {binanceAssets && binanceAssets.map((item) => <option value={item.symbol}>{item.baseAsset}/{item.quoteAsset}</option>)}
+      </select>
     </div>
   )
 }
